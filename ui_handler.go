@@ -222,6 +222,7 @@ func sendMessage(c *client.Client, logger *log.Logger, db *storage.DB, ui *ui.UI
 	msg, err := c.SendMessage(ctx, clientevent.ChatMessage{
 		Message: message.Message,
 		Body:    message.Body,
+		Sent:    true,
 	})
 	if err != nil {
 		logger.Print(p.Sprintf("error sending message: %v", err))
